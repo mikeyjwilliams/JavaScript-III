@@ -3,7 +3,8 @@
  * 1. this globally calls the window/global object binding basically all of javascript and its functions.
  * 2. implicit binding, this binds automatically to the object it is called inside and the object prior to `.function()` call would then be considered this.
  * 3. when a constructor function is used, points to the instance made and returned by said constructor function.
- * 4. call or apply methods used. this is defined.
+ * 4. call or apply methods used. this is defined as the owner of
+ *  of the function.
  *
  * write out a code example of each explanation above
  */
