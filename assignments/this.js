@@ -50,3 +50,5 @@ const brian = new Artist('Brian Fallon');
 // Principle 4
 
 // code example for Explicit Binding  
+//ra.favMusician.call(brian);
+//brian.favMusician.call(ra);
