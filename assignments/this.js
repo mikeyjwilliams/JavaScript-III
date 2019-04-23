@@ -34,6 +34,16 @@ bandFunc(bands);
 // Principle 3
 
 // code example for New Binding
+function Fish(name) {
+    this.name = name;
+    this.type = 'Blue Gill';
+    this.given = function() {
+        console.log(`${this.name} is a ${this.type} of fish.`);
+        console.log(this);
+    };
+};
+const blueGill = new Fish('Blue');
+//blueGill.given();
 
 
 // Principle 4
