@@ -1,6 +1,6 @@
 /* The for principles of "this";
- * in your own words. explain the four principle for the "this" keyword below.
- * 1. this globally calls the window/global object binding or all of javascript and its functions.
+ * in your own words. explain the four principle for the "this" keyword below. 
+ * 1. this globally calls the window/global object binding basically all of javascript and its functions.
  * 2. implicit binding, this binds automatically to the object it is called inside and the object prior to `.function()` call would then be considered this.
  * 3. when a constructor function is used, points to the instance made and returned by said constructor function.
  * 4. call or apply methods used. this is defined.
