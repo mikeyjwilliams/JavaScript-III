@@ -3,7 +3,7 @@
 *
 * 1. this globally calls the window/global object binding or all of javascript and its functions.
 * 2. implicit binding, a function is called and the object prior to `.function()` call would then be considered this.
-* 3. 
+* 3. when a constructor function is used, points to the instance made and returned by said constructor function.
 * 4.
 *
 * write out a code example of each explanation above
