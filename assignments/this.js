@@ -12,7 +12,11 @@
 // Principle 1
 
 // code example for Window Binding
-
+function greetingWindow(name) {
+    console.log(this);
+    return `hello ${name} do you see window?`;
+}
+greetingWindow(name);
 // Principle 2
 
 // code example for Implicit Binding
