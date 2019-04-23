@@ -24,7 +24,6 @@ const bandFunc = bandNames => {
     bandNames.favoriteBand = function () {
         console.log(`My favorite band is ${this.favBand}.`);
         console.log(`While your favorite band is ${this.name}.`);
-        console.log(this);
     };
 }
 const bands = {
@@ -37,7 +36,7 @@ bandFunc(bands);
 // Principle 3
 
 // code example for New Binding
-
+function
 
 
 // Principle 4
