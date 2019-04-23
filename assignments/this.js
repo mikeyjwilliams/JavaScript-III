@@ -36,8 +36,16 @@ bandFunc(bands);
 // Principle 3
 
 // code example for New Binding
-function
-
+function Artist(musician) {
+    this.musician = musician;
+    this.favMusician = function () {
+        console.log(this.musician);
+    };
+}
+const ra = new Artist('Rise Against');
+const brian = new Artist('Brian Fallon');
+//ra.favMusician();
+//brian.favMusician();
 
 // Principle 4
 
