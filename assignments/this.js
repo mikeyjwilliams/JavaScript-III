@@ -20,19 +20,21 @@ function greetingWindow(name) {
 // Principle 2
 
 // code example for Implicit Binding
-const bandName = {
-    favBand: 'Andrew Mcmahon in the wilderness',
-    favoriteBand: function(name) {
+const bandFunc = bandNames => {
+    bandNames.favoriteBand = function() {
         console.log(`My favorite band is ${this.favBand}.`);
-        console.log(`While your favorite band is ${name}.`);
+        console.log(`While your favorite band is ${this.name}.`);
         console.log(this);
-    }
+    };
 }
-bandName.favoriteBand('Something Corporate');
+const bands = {favBand: 'Thrice', name: 'Something Corporate'};
+bandFunc(bands);
+//bands.favoriteBand();
 
 // Principle 3
 
 // code example for New Binding
+
 
 // Principle 4
 
