@@ -85,6 +85,22 @@ Hero.prototype.attack = function (character) {
     return `${this.name} attacked ${character.name} of the ${character.team} and reduced their health to ${character.healthPoints}`;
   }
 }
+
+function Villain(attributes) {
+  Humanoid.call(this, attributes);
+  this.heroVillian = attributes.heroVillian;
+}
+Villain.prototype = Object.create(Humanoid.prototype);
+
+Villain.prototype.attack(character) {
+  if (character.hasOwnProperty('healthPoints')) {
+    //   character.destroy();
+    //   return `${this.name} killed ${character.name} of ${character.team}.`;
+    // } else {
+    character.healthPoints -= 2;
+    return `${this.name} attacked ${character.name} of the ${character.team} and reduced their health to ${character.healthPoints}`;
+  }
+}
 // Test you work by un-commenting these 3 objects and the list of console logs below:
 
 
