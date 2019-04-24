@@ -77,12 +77,11 @@ function Hero(attributes) {
 Hero.prototype = Object.create(Humanoid.prototype); // Hero inherits Humanoid proto's.
 
 Hero.prototype.attack = function (character) {
-  if (character.hasOwnProperty('healthPoints')) {
-    //   character.destroy();
-    //   return `${this.name} killed ${character.name} of ${character.team}.`;
-    // } else {
+  if (character.healthPoints > 0) {
     character.healthPoints -= 2;
     return `${this.name} attacked ${character.name} of the ${character.team} and reduced their health to ${character.healthPoints}`;
+  } else {
+    return `${this.name} killed ${character.name} of ${character.team}. \n${character.destroy()}`;
   }
 }
 
@@ -93,12 +92,11 @@ function Villain(attributes) {
 Villain.prototype = Object.create(Humanoid.prototype);
 
 Villain.prototype.attack = function (character) {
-  if (character.hasOwnProperty('healthPoints')) {
-    //   character.destroy();
-    //   return `${this.name} killed ${character.name} of ${character.team}.`;
-    // } else {
+  if (character.healthPoints > 0) {
     character.healthPoints -= 2;
     return `${this.name} attacked ${character.name} of the ${character.team} and reduced their health to ${character.healthPoints}`;
+  } else {
+    return `${this.name} killed ${character.name} of ${character.team}. \n${character.destroy()}`;
   }
 }
 // Test you work by un-commenting these 3 objects and the list of console logs below:
@@ -153,7 +151,7 @@ const archer = new Humanoid({
   ],
   language: 'Elvish',
 });
-const healer = new Hero({
+const mario = new Hero({
   createdAt: new Date(),
   dimensions: {
     length: 1,
@@ -161,8 +159,8 @@ const healer = new Hero({
     height: 4,
   },
   healthPoints: 10,
-  name: 'Lilith',
-  team: 'Forest Kingdom',
+  name: 'Mario',
+  team: 'Mushroom Kingdom',
   weapons: [
     'Bow',
     'Dagger',
@@ -170,10 +168,32 @@ const healer = new Hero({
   language: 'Elvish',
   heroVillian: 'hero'
 });
-console.log(healer.attack(mage));
-console.log(healer.attack(mage));
-console.log(healer.attack(mage));
-console.log(mage);
+const bowser = new Villain({
+  createdAt: new Date(),
+  dimensions: {
+    length: 1,
+    width: 2,
+    height: 4,
+  },
+  healthPoints: 10,
+  name: 'Bowser',
+  team: 'Forest Kingdom',
+  weapons: [
+    'Bow',
+    'Dagger',
+  ],
+  language: 'Elvish',
+  heroVillian: 'villain'
+});
+console.log(bowser.attack(mario));
+console.log(bowser.attack(mario));
+console.log(bowser.attack(mario));
+console.log(bowser.attack(mario));
+console.log(bowser.attack(mario));
+console.log(bowser.attack(mario));
+//console.log(mario.attack(bowser));
+// console.log(healer);
+// console.log(mage);
 /*
   console.log(mage.createdAt); // Today's date
   console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
