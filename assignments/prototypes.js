@@ -92,7 +92,7 @@ function Villain(attributes) {
 }
 Villain.prototype = Object.create(Humanoid.prototype);
 
-Villain.prototype.attack(character) {
+Villain.prototype.attack = function (character) {
   if (character.hasOwnProperty('healthPoints')) {
     //   character.destroy();
     //   return `${this.name} killed ${character.name} of ${character.team}.`;
@@ -173,6 +173,7 @@ const healer = new Hero({
 console.log(healer.attack(mage));
 console.log(healer.attack(mage));
 console.log(healer.attack(mage));
+console.log(mage);
 /*
   console.log(mage.createdAt); // Today's date
   console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
